@@ -1,0 +1,20 @@
+﻿生成启动时间为 2021/8/15 10:56:10。
+     1>项目“C:\360安全浏览器下载\C++Code\初始指针\初始指针\初始指针.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\初始指针.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "初识指针_1.cpp"
+         初识指针_1.cpp
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\360安全浏览器下载\C++Code\初始指针\Debug\初始指针.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\初始指针.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\360安全浏览器下载\C++Code\初始指针\Debug\初始指针.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\360安全浏览器下载\C++Code\初始指针\Debug\初始指针.lib" /MACHINE:X86 "Debug\初识指针_1.obj"
+         初始指针.vcxproj -> C:\360安全浏览器下载\C++Code\初始指针\Debug\初始指针.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\360安全浏览器下载\C++Code\初始指针\Debug\初始指针.exe;#1" /manifest "Debug\初始指针.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“Debug\初始指针.unsuccessfulbuild”。
+         正在对“Debug\初始指针.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\360安全浏览器下载\C++Code\初始指针\初始指针\初始指针.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.57

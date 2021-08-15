@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "初级结构体", "初级结构体\初级结构体.vcxproj", "{BA3D7F88-548C-4832-8EB6-8AA639BC6EE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA3D7F88-548C-4832-8EB6-8AA639BC6EE1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BA3D7F88-548C-4832-8EB6-8AA639BC6EE1}.Debug|Win32.Build.0 = Debug|Win32
+		{BA3D7F88-548C-4832-8EB6-8AA639BC6EE1}.Release|Win32.ActiveCfg = Release|Win32
+		{BA3D7F88-548C-4832-8EB6-8AA639BC6EE1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

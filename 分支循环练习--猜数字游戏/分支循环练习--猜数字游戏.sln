@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "分支循环练习--猜数字游戏", "分支循环练习--猜数字游戏\分支循环练习--猜数字游戏.vcxproj", "{8A2F8B4A-771A-430F-8299-A5ECF0A0A57F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A2F8B4A-771A-430F-8299-A5ECF0A0A57F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A2F8B4A-771A-430F-8299-A5ECF0A0A57F}.Debug|Win32.Build.0 = Debug|Win32
+		{8A2F8B4A-771A-430F-8299-A5ECF0A0A57F}.Release|Win32.ActiveCfg = Release|Win32
+		{8A2F8B4A-771A-430F-8299-A5ECF0A0A57F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

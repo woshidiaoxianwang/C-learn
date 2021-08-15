@@ -1,0 +1,22 @@
+﻿生成启动时间为 2021/8/9 11:34:01。
+     1>项目“C:\360安全浏览器下载\C++Code\分支和循环\分支和循环\分支和循环.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\分支和循环.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "1-6，循环作业.cpp"
+         1-6，循环作业.cpp
+     1>1-6，循环作业.cpp(16): error C2668: “sqrt”: 对重载函数的调用不明确
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(589): 可能是“long double sqrt(long double)”
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(541): 或       “float sqrt(float)”
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(127): 或       “double sqrt(double)”
+                 尝试匹配参数列表“(int)”时
+     1>1-6，循环作业.cpp(23): error C2668: “sqrt”: 对重载函数的调用不明确
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(589): 可能是“long double sqrt(long double)”
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(541): 或       “float sqrt(float)”
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\math.h(127): 或       “double sqrt(double)”
+                 尝试匹配参数列表“(int)”时
+     1>已完成生成项目“C:\360安全浏览器下载\C++Code\分支和循环\分支和循环\分支和循环.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.50
