@@ -27,7 +27,7 @@
 
 
 
-//
+//½»»»abµÄÖµ
 //void Swap2(int* pa,int* pb)
 //{
 //	int tmp = 0;

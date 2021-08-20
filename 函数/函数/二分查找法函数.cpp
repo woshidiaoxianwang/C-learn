@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNING 1
 #include <string.h>
 #include <stdio.h>
-//int binary_search(int arr[],int k, int sz)//数组传参传的是首元素的地址，这里的arr[]传过去的是一个指针
+//int binary_search(int arr[],int k, int sz)//数组传参传的是首元素的地址，这里的arr[]传过去的是一个指针，首元素地址。
 //{
 //	//算法的实现
 //	int left = 0;

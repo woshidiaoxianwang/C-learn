@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNING 1
 #include<stdio.h>
+//递归解决阶乘。
 //int Fac2(int n)
 //{
 //	if(n<=1)
@@ -8,7 +9,7 @@
 //		return n*Fac2(n-1);
 //}
 //
-//
+//递归求斐波那契数的第n项
 //int Fib(int n)//递归解决斐波那契数，会导致大量重复计算效率低下
 //{
 //	if(n<=2)
