@@ -20,7 +20,7 @@ void my_strcpy(char* dest, char* src)
 	assert(dest != NULL);//断言如果断言不符合直接通过，如果符合则报错
 	assert(src != NULL);
 
-	while (*dest++ = *src++)
+	while (*dest++ = *src++)//这里若是拷贝到了\0，那么里面的值也为0，这就会正好使得while停下。
 	{
 		;
 	}
