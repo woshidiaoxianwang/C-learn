@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNING 1
 #include<stdio.h>
-
+#include<stdlib.h>
+#include<string.h>
 ////1字符指针
 //int main()
 //{
@@ -278,7 +279,7 @@
 ////	(*(void (*)())0)找到了0地址处的这个函数,最后的()代表调用这个无参函数
 ////void (*signal(int , void(*)(int)))(int);//函数声明，第一个参数int，第二个参数是函数指针类型,该函数指针指向的函数的参数是int，返回类型是void
 ////去掉函数名参数后，剩下返回类型
-////void (*      )(int)--返回的也是个函数指针，该函数指针指向的函数的参数是int，返回类型是viod
+////void (*                          )(int)--返回的也是个函数指针，该函数指针指向的函数的参数是int，返回类型是viod
 ////
 ////void (*signal(int , void(*)(int)))(int);
 ////实际应用，这玩意怎么简化？
@@ -475,76 +476,208 @@
 // }
 //
 //
-//5.3回调函数
+//5.3回调函数-1
 //回调函数就是一个通过函数指针调用的函数
+//
+//void menu()
+// {
+//	 printf("********************************\n");
+//	 printf("**   1. Add          2. Sub   **\n");
+//	 printf("**   3. Mul          4. Dev   **\n");
+//	 printf("**********  0. exit ************\n");
+//	 printf("********************************\n");
+// }
+//
+//
+// int Add(int x,int y)
+//{
+//	return x + y;
+//}
+//int Sub(int x,int y)
+//{
+//	return x - y;
+//}
+//int Mul(int x,int y)
+//{
+//	return x * y;
+//}
+//int Div(int x,int y)
+//{
+//	return x / y;
+//}
+//
+//void Calc(int(*pf)(int, int))//通过传进来的*pf这个地址调用相应函数
+//{
+//	 int x = 0;
+//	 int y = 0;;
+//	printf("请输入两个操作数:>");
+//	scanf("%d%d",&x,&y);//x,y要&
+//	printf("%d\n",pf(x,y));
+//}
+// int main()
+// {
+//	 int input = 0;
+//	 int x = 0;
+//	 int y = 0;
+//	 do
+//	 {
+//		 menu();
+//		 printf("请选择:>");
+//		 scanf("%d",&input);
+//		 switch (input)
+//		 {
+//		 case 1:
+//			 Calc(Add);//Add就是传给Calc中*pf的地址。
+//			 break;
+//		 case 2:
+//			 Calc(Sub);
+//			 break;
+//		 case 3:
+//			 Calc(Mul);
+//			 break;
+//		 case 4:
+//			 Calc(Div);
+//			 break;
+//		 case 0:
+//			 printf("退出\n");
+//			 break;
+//		 default:
+//			 printf("输入错误\n");
+//			 break;
+//		 }
+//	 }while (input);
+//	 
+////return 0;
+// }
+//
+//
+// int main()
+// {
+//	 int arr[10] = {0};
+//	 int (*p)[10] = &arr;
+//
+//	 int(*pf)(int ,int);
+//	 int (*pfarr[4])(int,int);//pfArr是一个数组-函数指针的数组
+//	 //ppfArr是一个指向函数指向函数指针数组的指针
+//	 int(*(*ppfarr)[4])(int, int) = &pfarr;
+//	 return 0;
+// }
 
-void menu()
- {
-	 printf("********************************\n");
-	 printf("**   1. Add          2. Sub   **\n");
-	 printf("**   3. Mul          4. Dev   **\n");
-	 printf("**********  0. exit ************\n");
-	 printf("********************************\n");
- }
+
+//
+////回调函数-2
+////冒泡排序
+////qsort---quick sort快速排序，是个库函数。
+////
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//};
+////void qsort(void *base,
+////	size_t num,
+////	size_t width,
+////	int( *cmp)(const void *e1,const void *e2)
+////	);
+//	//void* p = &a;//泛类型指针，可以接收任意类型的地址
+//	//void*不可进行解引用操作也不能进行加减操作。
+////排序方式函数
+//int cmp_float(const void* e1, const void*e2)
+//{
+//	return *(float*)e1 - *(float*)e2;//强制类型转换。
+//	//排序方式函数要求
+//	/*两个元素之间的比较结果无非 > 、= 、< ，我们要给希望成立的结果返回 1，例如：如果希望从小
+//	到大排列，则 *a < *b 成立时返回 1；如果希望从大到小排列，则 *a > *b 返回 1，相应的 *a == *b 返回 0，*a < *b 返回 -1.
+//	因此如果将程序的 1 和 -1 颠倒位置，结果就会变成降序排列,但更机智的是直接在返回值上加-*/
+//}
+//int cmp_stu_age(const void* e1,const void*e2)
+//{
+//	return ((struct Stu*)e1)->age - ((struct Stu*)e2)->age;//箭头比强转优先级别高，因此要括起来强转后的整体
+//}
+//int cmp_stu_name(const void* e1,const void*e2)
+//{
+//	return strcmp(((struct Stu*)e1)->name,((struct Stu*)e2)->name);
+//}
+//void test2()
+//{
+//	float f[] = {9.0,8.0,7.0,6.0,5.0};
+//	int sz = sizeof(f) /sizeof(f[0]);
+//	//qsort语法qsort(所排数组，数组元素个数，数组每个元素的大小，排序方式函数)
+//	qsort(f,sz,sizeof(f[0]),cmp_float);
+//}
+//void test3()
+//{
+//	struct Stu s[3] = { {"张三",20},{"李四",20},{"王五",20} };
+//	int sz = sizeof(s) /sizeof(s[0]);
+//	//qsort语法qsort(所排数组，数组元素个数，数组每个元素的大小，排序方式函数)
+//	//如果按照名字排序，则会按照前面名字首字母字母表顺序（比ASSIC码值）。
+//	qsort(s,sz,sizeof(s[0]),cmp_stu_name);
+//}
+//
+////字符串比较不能直接用><=比较，应该用strcmp函数。
+//int main()
+//{
+//	
+//	return 0;
+//}
 
 
- int Add(int x,int y)
-{
-	return x + y;
-}
-int Sub(int x,int y)
-{
-	return x - y;
-}
-int Mul(int x,int y)
-{
-	return x * y;
-}
-int Div(int x,int y)
-{
-	return x / y;
-}
 
-void Calc(int(*pf)(int, int))//通过传进来的*pf这个地址调用相应函数
-{
-	 int x = 0;
-	 int y = 0;;
-	printf("请输入两个操作数:>");
-	scanf("%d%d",&x,&y);//x,y要&
-	printf("%d\n",pf(x,y));
-}
- int main()
- {
-	 int input = 0;
-	 int x = 0;
-	 int y = 0;
-	 do
-	 {
-		 menu();
-		 printf("请选择:>");
-		 scanf("%d",&input);
-		 switch (input)
-		 {
-		 case 1:
-			 Calc(Add);//Add就是传给Calc中*pf的地址。
-			 break;
-		 case 2:
-			 Calc(Sub);
-			 break;
-		 case 3:
-			 Calc(Mul);
-			 break;
-		 case 4:
-			 Calc(Div);
-			 break;
-		 case 0:
-			 printf("退出\n");
-			 break;
-		 default:
-			 printf("输入错误\n");
-			 break;
-		 }
-	 }while (input);
-	 
-//return 0;
- }
+//冒泡排序的实现
+//用户需要传入(数组地址，元素个数，元素大小，排序方式函数地址)
+//其中排序方式函数的返回值如果大于0，就排序。
+//
+//
+////交换函数
+//void Swap(char* buf1,char*buf2,int width)
+//{
+//	int i = 0;
+//	for (i = 0;i<width;i++)
+//	{
+//		char tmp = *buf1;
+//		*buf1 = *buf2;
+//		*buf2 = tmp;
+//		buf1++;
+//		buf2++;
+//	}
+//}
+////冒泡排序函数主体
+//void bubble_sort(void*base, int sz,int width,int (*cmp)(const void*e1,const void*e2))
+//{
+//	int i = 0;
+//	//趟数
+//	for (i = 0;i < sz - 1;i++)
+//	{
+//		//每一趟比较的对数
+//		int j = 0;
+//		for (j = 0;j < sz-1-i;j++)
+//		{
+//			//两个元素的比较
+//			if(cmp((char*)base+j*width, (char*)base+(j+1)*width) > 0)
+//				//把数组base（首元素的地址）强转为char*
+//				//宽度width可以让我们知道跳过多少个元素
+//				Swap((char*)base + j*width,(char*)base  + (j + 1)*width,width);
+//		}
+//	}
+//}
+//
+////比较函数
+//int cmp_int(const void* e1, const void*e2)
+//{
+//	return *(int*)e1 - *(int*)e2;//强制类型转换。
+//}
+//void test4()
+//{
+//	int arr[10] = {9,8,7,6,5,2,3,14,8,2};
+//	int sz = sizeof(arr)/sizeof(arr[0]);
+//	//使用bubble_sort的程序员一定知道自己排序的是什么数据
+//	//就应该知道如何比较待排序数组中的元素
+//	bubble_sort(arr,sz,sizeof(arr[0]),cmp_int);
+//
+//}
+//
+//int main()
+//{
+//	
+//	return 0;
+//}
